@@ -1,23 +1,17 @@
 package cfast;
 
 import java.util.ArrayList;
-
+import org.springframework.data.annotation.Id;
 import lombok.Data;
 
 @Data
 public class Board {
+
+    @Id
+    private String id;
+
     // private final ArrayList<Column> columns;
     private ArrayList<Column> columns;
-
-    // @JsonCreator
-    // public Board(@JsonProperty("columns") ArrayList<Column> columns) {
-    // this.columns = columns;
-    // System.out.println("!!!!!!BOARD CONSTRUCTOR!!!!!! columns: " + columns);
-    // }
-
-    // Default constructor for JSON deserialization
-    // public Board() {
-    // }
 
     public ArrayList<Column> getColumns() {
         return this.columns;
