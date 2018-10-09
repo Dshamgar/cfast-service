@@ -1,6 +1,7 @@
 package cfast;
 
 import java.util.ArrayList;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import lombok.Data;
 
@@ -8,7 +9,7 @@ import lombok.Data;
 public class Board {
 
     @Id
-    private String id;
+    public ObjectId _id;
 
     // private final ArrayList<Column> columns;
     private ArrayList<Column> columns;
@@ -24,5 +25,14 @@ public class Board {
         } else {
             return "NULL";
         }
+    }
+
+    // ObjectId needs to be converted to string
+    public String get_id() {
+        return _id.toHexString();
+    }
+
+    public void set_id(ObjectId _id) {
+        this._id = _id;
     }
 }
