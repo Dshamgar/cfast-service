@@ -1,26 +1,18 @@
 package cfast;
 
 import java.util.ArrayList;
-
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import lombok.Data;
 
 @Data
 public class Board {
+
+    @Id
+    public ObjectId _id;
+
     // private final ArrayList<Column> columns;
     private ArrayList<Column> columns;
-
-    // @JsonCreator
-    // public Board(@JsonProperty("columns") ArrayList<Column> columns) {
-    // this.columns = columns;
-    // System.out.println("!!!!!!BOARD CONSTRUCTOR!!!!!! columns: " + columns);
-    // }
-
-    // Default constructor for JSON deserialization
-    // public Board() {
-    // }
 
     public ArrayList<Column> getColumns() {
         return this.columns;
@@ -33,5 +25,14 @@ public class Board {
         } else {
             return "NULL";
         }
+    }
+
+    // ObjectId needs to be converted to string
+    public String get_id() {
+        return _id.toHexString();
+    }
+
+    public void set_id(ObjectId _id) {
+        this._id = _id;
     }
 }
