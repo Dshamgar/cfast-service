@@ -15,4 +15,37 @@ public class Blocked {
                 + "blocked.blockedColumn=" + this.blockedColumn + ", " + "blocked.yBlockedIndex=" + this.yBlockedIndex
                 + ", " + "blocked.yBlockedColumn=" + this.yBlockedColumn + "]";
     }
+
+    public int getBlockedIndex() {
+        return blockedIndex;
+    }
+
+    public void setBlockedIndex(int blockedIndex) {
+        this.blockedIndex = blockedIndex;
+    }
+
+    public int getYBlockedIndex() {
+        return yBlockedIndex;
+    }
+
+    public void setYBlockedIndex(int yBlockedIndex) {
+        this.yBlockedIndex = yBlockedIndex;
+    }
+
+    public int getBlockedColumn() {
+        return blockedColumn;
+    }
+
+    public void setBlockedColumn(int blockedColumn) {
+        this.blockedColumn = blockedColumn;
+    }
+
+    public int getYBlockedColumn() {
+        return yBlockedColumn;
+    }
+
+    public void setYBlockedColumn(int yBlockedColumn) {
+        this.yBlockedColumn = yBlockedColumn;
+    }
+
 }
