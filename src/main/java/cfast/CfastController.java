@@ -22,19 +22,6 @@ class CfastController {
 	@Autowired
 	private BoardRepository repository;
 
-	/*
-	 * @CrossOrigin
-	 * 
-	 * @ResponseBody
-	 * 
-	 * @PostMapping("/cfast-status") Board newBoard(@RequestBody Board inBoard) {
-	 * System.out.println("Handling API call!  board: " + inBoard);
-	 * 
-	 * inBoard.getColumns().get(0).getHexes().get(3).getRaphaelHex().getAttrs().
-	 * setFill("red"); inBoard.getColumns().get(0).getHexes().get(3).setColor("2");
-	 * return inBoard; }
-	 */
-
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public Board modifyBoardById(@PathVariable("id") ObjectId id, @Valid @RequestBody Board board) {
 		board.set_id(id);
